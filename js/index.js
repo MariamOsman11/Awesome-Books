@@ -5,7 +5,11 @@ const form = document.querySelector('form');
 
 let bookLibrary = [];
 
-const store = localStorage.getItem('bookLibrary');
+if (localStorage.getItem('books') == null){
+    localStorage.setItem('books', JSON.stringify(bookLibrary));
+}
+
+const store = localStorage.getItem('books');
 if (store) {
   bookLibrary = JSON.parse(store);
 }
@@ -46,7 +50,7 @@ function addBook(e) {
 
 function removeBook(index) {
   bookLibrary = bookLibrary.filter((book, bookIndex) => bookIndex !== index);
-  localStorage.setItem('bookLibrary', JSON.stringify(bookLibrary));
+  localStorage.setItem('books', JSON.stringify(bookLibrary));
 
   createLibrary();
 }
