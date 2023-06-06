@@ -5,8 +5,8 @@ const form = document.querySelector('form');
 
 let bookLibrary = [];
 
-if (localStorage.getItem('books') == null){
-    localStorage.setItem('books', JSON.stringify(bookLibrary));
+if (localStorage.getItem('books') == null) {
+  localStorage.setItem('books', JSON.stringify(bookLibrary));
 }
 
 const store = localStorage.getItem('books');
