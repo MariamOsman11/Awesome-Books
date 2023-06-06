@@ -4,24 +4,25 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <script src="js/index.js"></script>
+      <link rel="stylesheet" href="style.css">
       <title>Document</title>
    </head>
 
    <body>
       <div class="container">
          <h1>Awesome Books</h1>
-         <div id="bookList">
+         <div class="bookList">
             
          </div>
          <div>
             <form action="" id="form-action">
                <input type="text" name="text" placeholder="title" class="title"><br><br>
-               <input type="text" name="text" placeholder="author" class="author"><br>
-               <button id="btn-add" onclick="formData()">Add</button>
+               <input type="text" name="text" placeholder="author" class="author"><br><br>
+               <button id="btn-add" type="submit">Add</button>
             </form>
          </div>
       </div>
+      <script src="js/index.js"></script>
    </body>
 
 </html>
