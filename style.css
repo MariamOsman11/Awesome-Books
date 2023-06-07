@@ -1,6 +1,78 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   font-size: 20px;
   font-weight: 700;
+  align-items: center;
+}
+
+.bookList>div:nth-child(odd) {
+  background: #e0e0e0;
+}
+
+.container hr {
+  border: 2px solid #000;
+  width: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.bookList {
+  border: 2px solid #000;
+}
+
+.books_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+  padding: 0 10px;
+}
+
+.books_container button {
+  background-color: #fff;
+  border: 1px solid #000;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0);
+  cursor: pointer;
+}
+
+.form_styles button {
+  background-color: #fff;
+  border: 1px solid #000;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0);
+  cursor: pointer;
+  float: right;
+}
+
+.container h1 {
+  font-size: 20px;
+}
+
+.form_styles h2 {
+  font-size: 20px;
+}
+
+.form_styles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form_styles input {
+  width: 100%;
+  border: 2px solid #000;
+}
+
+.books_container p {
+  font-size: 12px;
 }
