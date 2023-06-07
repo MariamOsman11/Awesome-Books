@@ -59,6 +59,7 @@ function removeBook(index) {
 }
 
 const form = document.querySelector('form');
+
 form.addEventListener('submit', objectOne.addBook);
 
 objectOne.storedLocal();
