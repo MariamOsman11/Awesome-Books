@@ -1,4 +1,4 @@
-class bookStore {
+class Bookstore {
   constructor() {
     this.BooksContainer = document.querySelector('.bookList');
     this.bookTitle = document.querySelector('.title');
@@ -7,11 +7,11 @@ class bookStore {
     this.addBook = this.addBook.bind(this);
   }
 
-  storedLocal (){
+  storedLocal() {
     if (localStorage.getItem('books') == null) {
       localStorage.setItem('books', JSON.stringify(this.bookLibrary));
     }
-    
+
     const store = localStorage.getItem('books');
     if (store) {
       this.bookLibrary = JSON.parse(store);
@@ -36,31 +36,31 @@ class bookStore {
     e.preventDefault();
     const titleBook = this.bookTitle.value;
     const authorBook = this.bookAuthor.value;
-    const newBooks = {titleBook, authorBook};
-  
+    const newBooks = { titleBook, authorBook };
+
     this.bookLibrary.push(newBooks);
     localStorage.setItem('books', JSON.stringify(this.bookLibrary));
-  
+
     this.createLibrary();
-  
+
     // Reset input fields
     this.bookTitle.value = '';
     this.bookAuthor.value = '';
   }
 }
 
-function removeBook(index) {
-  Obj1.bookLibrary = Obj1.bookLibrary.filter((book, bookIndex) => bookIndex !== index);
-  localStorage.setItem('books', JSON.stringify(Obj1.bookLibrary));
+const objectOne = new Bookstore();
 
-  Obj1.createLibrary();
+function removeBook(index) {
+  objectOne.bookLibrary = objectOne.bookLibrary.filter((book, bookIndex) => bookIndex !== index);
+  localStorage.setItem('books', JSON.stringify(objectOne.bookLibrary));
+
+  objectOne.createLibrary();
 }
 
-const Obj1 = new bookStore();
-
 const form = document.querySelector('form');
-form.addEventListener('submit', Obj1.addBook);
+form.addEventListener('submit', objectOne.addBook);
 
-Obj1.storedLocal();
-Obj1.createLibrary();
+objectOne.storedLocal();
+objectOne.createLibrary();
 removeBook();
