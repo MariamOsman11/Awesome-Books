@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="style.css">
       <title>Document</title>
    </head>
-
    <body>
       <div class="main-content">
          <div class="main-menu">
             <h2>Awesome Books</h2>
-            <ul>
-               <li>List |</li>
-               <li>Add New |</li>
-               <li>Contact</li>
+            <ul class="main-list">
+               <li class="listbooks">
+                  <a href="#listed">List</a>
+               </li>
+            
+               <li class="addednew">
+                  <a href="#forms">Add New</a>
+               </li>
+            
+               <li class="contactme">
+                  <a href="#contacts">Contact</a>
+               </li>
             </ul>
          </div>
+         <section id="date">
+
+         </section>
          <div class="container">
-            
-            <h1> All awesome Books</h1>
-            <div class="bookList">
-               
+            <div id="listed" class="bookList">
+               <h1> All awesome Books</h1>
             </div>
-            <hr/>
-            <div class="form_styles">
+            <div id= "forms" class="form_styles">
                <h2>Add a New Book</h2>
                <form action="" id="form-action">
                   <input type="text" name="text" placeholder="Title" class="title" required><br>
@@ -34,11 +40,36 @@
                </form>
             </div>
          </div>
+         <div id="contacts" class="contact-section">
+            <h2 class="contact-header">Contact Information</h2>
+            <p class="contact-info">
+               Do you have any questions or you want to connect?<br />You can
+               reach out to me!
+            </p>
+            <ul class="contact-list">
+               <li>E-mail: trend@gmail.com</li>
+               <li>Phone number: 4531659</li>
+               <li>Address: Nairobi</li>
+            </ul>
+         </div>
          <div class="footer-section">
             <h2>Copyright</h2>
          </div>
       </div>
+   
       <script src="js/index.js"></script>
+      <script src="js/display.js"></script>
    </body>
-
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
