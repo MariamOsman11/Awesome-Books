@@ -1,8 +1,17 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#btn-add {
+  margin-top: 5%;
 }
 
 .container {
+  width: 100%;
+  margin-top: 3%;
   display: flex;
   flex-direction: column;
   font-size: 20px;
@@ -75,4 +84,70 @@ body {
 
 .books_container p {
   font-size: 12px;
+}
+
+.main-menu {
+  justify-content: space-between;
+  padding: 0 15px;
+  border: 2px solid #000;
+  display: flex;
+  align-items: center;
+}
+
+.main-menu ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.main-menu li {
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 12px;
+}
+
+.footer-section {
+  padding: 0 10px;
+  border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  margin-top: 28%;
+}
+
+.main-menu hr {
+  border: 2px solid #000;
+  height: 50%;
+}
+
+.dates p {
+  float: right;
+}
+
+.footer-section h2 {
+  margin: 0;
+}
+
+.main-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+#date {
+  text-align: right;
+}
+
+.main-list li:nth-child(2) {
+  border-right: 2px black solid;
+  border-left: 2px black solid;
+  padding: 0 10px 0 10px;
+}
+
+li a {
+  text-decoration: none;
+}
+
+.contacts {
+  justify-content: center;
+  text-align: center;
 }

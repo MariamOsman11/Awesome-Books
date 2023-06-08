@@ -5,13 +5,13 @@ class Bookstore {
     this.bookAuthor = document.querySelector('.author');
     this.bookLibrary = [];
     this.addBook = this.addBook.bind(this);
+    this.form = document.querySelector('form');
   }
 
   storedLocal() {
     if (localStorage.getItem('books') == null) {
       localStorage.setItem('books', JSON.stringify(this.bookLibrary));
     }
-
     const store = localStorage.getItem('books');
     if (store) {
       this.bookLibrary = JSON.parse(store);
@@ -25,7 +25,7 @@ class Bookstore {
       bookContainer.innerHTML = `
         <div class="books_container">
             <p>"${book.titleBook}" by ${book.authorBook}</p>
-            <button onclick="removeBook(${index})">Remove</button>
+            <button id=${index} onclick="clickedButton(this.id)">Remove</button>
         </div>
       `;
       this.BooksContainer.appendChild(bookContainer);
@@ -37,30 +37,32 @@ class Bookstore {
     const titleBook = this.bookTitle.value;
     const authorBook = this.bookAuthor.value;
     const newBooks = { titleBook, authorBook };
-
     this.bookLibrary.push(newBooks);
     localStorage.setItem('books', JSON.stringify(this.bookLibrary));
-
     this.createLibrary();
-
     // Reset input fields
     this.bookTitle.value = '';
     this.bookAuthor.value = '';
   }
-}
 
+  formAct() {
+    this.form.addEventListener('submit', this.addBook);
+  }
+
+  removeBook(index) {
+    this.bookLibrary = this.bookLibrary.filter((book, bookIndex) => bookIndex !== index);
+    localStorage.setItem('books', JSON.stringify(this.bookLibrary));
+    this.createLibrary();
+  }
+}
 const objectOne = new Bookstore();
-
-function removeBook(index) {
-  objectOne.bookLibrary = objectOne.bookLibrary.filter((book, bookIndex) => bookIndex !== index);
-  localStorage.setItem('books', JSON.stringify(objectOne.bookLibrary));
-
-  objectOne.createLibrary();
-}
-
-const form = document.querySelector('form');
-form.addEventListener('submit', objectOne.addBook);
-
+objectOne.formAct();
 objectOne.storedLocal();
 objectOne.createLibrary();
-removeBook();
+objectOne.removeBook();
+function clickedButton(theId) {
+  const savedInfo = parseInt(theId, 10);
+  objectOne.removeBook(savedInfo);
+}
+
+clickedButton();
